@@ -91,7 +91,7 @@ export const projects = [
     ],
     outcome:
       "เข้าใจสถาปัตยกรรมระบบ AI ระดับ production ตั้งแต่ OCR สองรอบ, การฝัง embedding หลายภาษา, ไปจนถึงการจัดเก็บ session และการนำเสนองานเทคนิคให้คนที่ไม่ได้เขียนโค้ดเข้าใจได้",
-    githubUrl: "",
+    githubUrl: "https://github.com/Laungdang/Scam-detection",
     demoUrl: "",
   },
   {
