@@ -89,7 +89,7 @@ export default function Hero() {
             href={profile.resumeUrl}
             className="flex items-center gap-2 rounded-md border border-[var(--color-border)] px-5 py-2.5 font-mono text-sm text-[var(--color-fg)] transition-colors hover:border-[var(--color-teal)] focus-ring"
           >
-            <DownloadIcon /> ดาวน์โหลด Resume
+            <DownloadIcon /> ดาวน์โหลด CV
           </a>
           <a
             href={profile.github}
