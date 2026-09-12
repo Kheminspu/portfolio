@@ -17,8 +17,9 @@ export const profile = {
     "นักศึกษาวิทยาการคอมพิวเตอร์ที่ชอบแตะทุกชั้นของระบบ ตั้งแต่ออกแบบฐานข้อมูลไปจนถึงหน้าจอที่ผู้ใช้เห็นจริง",
   about: `ผมเป็นนักศึกษามหาวิทยาลัยศรีปทุม (บางเขน) คณะเทคโนโลยีสารสนเทศ
 สาขาวิทยาการคอมพิวเตอร์ กำลังเตรียมตัวสมัครงาน/ฝึกงานในตำแหน่ง Junior Full-Stack Developer สนใจงานฝั่ง Backend และระบบที่ใช้ AI ช่วยแก้ปัญหาจริง เคยร่วมพัฒนาเอกสารสถาปัตยกรรม ระบบและนำเสนอโปรเจกต์ทั้งเดี่ยวและกลุ่ม โดยให้ความสำคัญกับความเข้าใจที่มาที่ไปของโค้ด มากกว่าการให้ AI สร้างให้แล้วส่งอย่างเดียว`,
-  resumeUrl: "#", // TODO: ใส่ลิงก์ไฟล์ Resume ของคุณ (เช่น Google Drive แบบเปิดสาธารณะ หรือไฟล์ .pdf ใน /public)
+  resumeUrl: "/Khemin-Saensae-CV.pdf",
   email: "khemin.sae@spumail.net",
+  phone: "099-237-5464",
   github: "https://github.com/Kheminspu",
   linkedin: "https://www.linkedin.com/in/khemin-saensae-199416436",
 };
@@ -29,16 +30,41 @@ export const skills = [
     items: ["Python", "JavaScript", "SQL", "HTML / CSS"],
   },
   {
-    category: "Frameworks & Libraries",
-    items: ["FastAPI", "React", "Tailwind CSS", "Streamlit"],
+    category: "Frontend",
+    items: ["React", "Tailwind CSS", "Streamlit"],
   },
   {
-    category: "Data & AI",
-    items: ["PostgreSQL", "ChromaDB (RAG)", "Claude API", "Groq Whisper"],
+    category: "Backend & API",
+    items: ["FastAPI", "REST API design"],
+  },
+  {
+    category: "AI / LLM",
+    items: [
+      "Claude API (Claude Haiku)",
+      "RAG",
+      "Prompt design",
+      "Vision API (OCR)",
+      "Embeddings (paraphrase-multilingual-MiniLM-L12-v2)",
+      "Groq Whisper large-v3",
+    ],
+  },
+  {
+    category: "Database",
+    items: ["PostgreSQL", "ChromaDB (vector DB)"],
+  },
+  {
+    category: "เอกสาร & แผนภาพ",
+    items: [
+      "Flowchart / DFD (Gane & Sarson)",
+      "Mermaid",
+      "draw.io",
+      "ReportLab (PDF ภาษาไทย)",
+      "Word documentation",
+    ],
   },
   {
     category: "Tools",
-    items: ["Git / GitHub", "Vercel", "Figma", "draw.io / Mermaid"],
+    items: ["Git / GitHub", "Vercel", "Figma"],
   },
 ];
 
@@ -47,22 +73,24 @@ export const projects = [
     id: "scamguard-ai",
     featured: true,
     name: "ScamGuard AI (HI-Scammer)",
-    period: "โปรเจกต์กลุ่ม — วิชา AI",
+    period: "โปรเจกต์กลุ่ม — AI / LLM + RAG",
     problem:
       "มิจฉาชีพออนไลน์ใช้ข้อความ รูปภาพ และเสียงหลอกลวงเป็นภาษาไทยหลากหลายรูปแบบ ทำให้ยากต่อการตรวจจับด้วยการกรองคำแบบเดิม",
     solution:
-      "ระบบวิเคราะห์ความเสี่ยงการหลอกลวงแบบ multi-modal (ข้อความ / รูปภาพ / เสียง) โดยผสาน RAG สำหรับเทียบเคียงรูปแบบกลโกงที่เคยพบ ร่วมกับ Blacklist API และ Pattern Matching",
-    role: "รับผิดชอบการทำความเข้าใจสถาปัตยกรรมระบบทั้งหมดในเชิงลึก จัดทำ system architecture diagram หลายรูปแบบ (Mermaid, draw.io XML, HTML infographic) เอกสารประกอบการนำเสนอ และสคริปต์ตอบคำถามอาจารย์ ทีมเป็นผู้พัฒนาโค้ดหลักของระบบ",
+      "ระบบใช้ Claude Haiku (claude-haiku-4-5) วิเคราะห์ข้อความ และ OCR ผ่าน Vision API แบบสองรอบ ใช้ paraphrase-multilingual-MiniLM-L12-v2 สร้าง embeddings เก็บบน ChromaDB เป็น RAG (top-k=3, similarity ≥ 0.5) ร่วมกับ Blacklist API และ Pattern Matching เสริมความแม่นยำในการตรวจจับ",
+    role: "ร่วมพัฒนาโค้ดบางส่วนของระบบ และรับผิดชอบทำความเข้าใจสถาปัตยกรรมทั้งระบบเพื่อนำเสนอผลงาน จัดทำโปสเตอร์นำเสนอ A4 ด้วย ReportLab (รองรับฟอนต์ไทยและไอคอนเวกเตอร์), ไดอะแกรมสถาปัตยกรรมหลายรูปแบบ (Mermaid, draw.io XML, HTML infographic), เอกสารเทคนิคและสคริปต์ถาม-ตอบสำหรับอาจารย์",
     tech: [
+      "Python",
       "FastAPI",
-      "Claude Haiku (Vision OCR)",
+      "Claude API",
       "ChromaDB",
       "Groq Whisper large-v3",
       "PostgreSQL",
       "Streamlit",
+      "ReportLab",
     ],
     outcome:
-      "เข้าใจสถาปัตยกรรมระบบ AI ระดับ production ตั้งแต่ OCR สองรอบ, การฝัง embedding หลายภาษา (paraphrase-multilingual-MiniLM-L12-v2), ไปจนถึงการจัดเก็บ session และการนำเสนองานเทคนิคให้คนที่ไม่ได้เขียนโค้ดเข้าใจได้",
+      "เข้าใจสถาปัตยกรรมระบบ AI ระดับ production ตั้งแต่ OCR สองรอบ, การฝัง embedding หลายภาษา, ไปจนถึงการจัดเก็บ session และการนำเสนองานเทคนิคให้คนที่ไม่ได้เขียนโค้ดเข้าใจได้",
     githubUrl: "",
     demoUrl: "",
   },
@@ -70,12 +98,12 @@ export const projects = [
     id: "pizza-ordering-system",
     featured: false,
     name: "Pizza Online Ordering System",
-    period: "โปรเจกต์เดี่ยว/กลุ่ม — วิชา CSI402",
+    period: "โปรเจกต์วิชา CSI402 — System Analysis & Design",
     problem:
       "ระบบสั่งพิซซ่าออนไลน์เดิมขาดเอกสารที่สื่อสาร logic การทำงานจริงระหว่างฝั่ง Customer และ Admin ให้ผู้ตรวจงานเข้าใจได้ง่าย",
     solution:
-      "จัดทำเอกสารระบบครบวงจร ได้แก่ Flowchart และ Data Flow Diagram ตามหลัก Gane & Sarson notation พร้อมตรวจสอบและแก้ไข diagram ให้ตรงกับ logic จริงของซอร์สโค้ด เช่น การตรวจสอบชื่อผู้ใช้ซ้ำ (ไม่ใช่อีเมล) และการแยกเส้นทางผู้ใช้ระหว่าง Admin กับ Customer",
-    role: "ออกแบบและแก้ไข Diagram (Mermaid, draw.io XML, SVG) ให้สอดคล้องกับพฤติกรรมจริงของระบบ และจัดทำรายงาน Word ฉบับสมบูรณ์",
+      "จัดทำเอกสารระบบครบวงจร ได้แก่ Flowchart และ Data Flow Diagram (DFD) ตามหลัก Gane & Sarson notation โดยใช้ทั้งรูปแบบ Mermaid และ draw.io XML พร้อมตรวจสอบและแก้ไข diagram ซ้ำหลายรอบให้ตรงกับ logic จริงของซอร์สโค้ด เช่น การตรวจสอบชื่อผู้ใช้ซ้ำ (ไม่ใช่อีเมล) การจัดเก็บข้อมูล session หลังล็อกอิน และการแยกเส้นทางผู้ใช้ระหว่าง Admin กับ Customer",
+    role: "วิเคราะห์และออกแบบ Diagram (Mermaid, draw.io XML) ให้สอดคล้องกับพฤติกรรมจริงของระบบ และจัดทำรายงาน Word ฉบับสมบูรณ์ เวอร์ชันก่อนหน้าของงาน (Pizza Hub) ออกแบบ Flowchart แบบ SVG และ Context Diagram DFD ตามหลัก Gane & Sarson พร้อมยึดหลักการเขียนโฟลว์ชาร์ตเชิงวิชาการ (Sequence, Selection, Iteration)",
     tech: ["Mermaid", "draw.io", "SVG", "Documentation"],
     outcome:
       "ฝึกอ่านโค้ดจริงแล้วแปลงเป็นแผนภาพที่ถูกต้องตามหลักวิชาการ (Sequence, Selection, Iteration) และเรียนรู้การสื่อสารการออกแบบระบบให้ตรงกับพฤติกรรมจริงของโปรแกรม",

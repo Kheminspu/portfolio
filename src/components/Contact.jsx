@@ -2,8 +2,10 @@ import { profile } from "../data.js";
 
 const links = [
   { label: "Email", href: `mailto:${profile.email}`, value: profile.email },
+  { label: "Phone", href: `tel:${profile.phone.replace(/-/g, "")}`, value: profile.phone },
   { label: "GitHub", href: profile.github, value: profile.github.replace("https://", "") },
   { label: "LinkedIn", href: profile.linkedin, value: profile.linkedin.replace("https://", "") },
+  { label: "Resume", href: profile.resumeUrl, value: "ดาวน์โหลด CV (PDF)" },
 ];
 
 export default function Contact() {
